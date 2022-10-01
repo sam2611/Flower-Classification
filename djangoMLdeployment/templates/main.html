@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Application</title>
+</head>
+<body>
+    <style>
+    body {
+        background-image: url("https://img.freepik.com/premium-photo/beautiful-amazing-cosmos-flower-field-landscape-sunset_1484-2511.jpg?w=2000");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: 1100px 600px;
+        text-align: center;
+    }
+    div{
+        margin: auto;
+        background-color: pink; 
+        width: 300px;
+        border: 6px solid white;
+    }
+    h4{
+        
+        background-color: lightgreen; 
+        margin: auto;
+        width: 400px;
+        border: 3px solid white;
+    }
+    </style>
+    <h1><em>Flower Classification and Prediction</em></h1>
+    <hr>
+
+    <div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <p>
+           
+        Sepal Length : <input type="number" name="sepal_length" required>
+        <br></p><p>
+        Sepal Width : <input type="number" name="sepal_width" required>
+        <br></p><p>
+        Petal Length : <input type="number" name="petal_length" required>
+        <br></p><p>
+        Petal Width : <input type="number" name="petal_width" required><br></p>
+        <input type="submit">
+    </form>
+</div>
+<p>
+{% if result %}
+    <h4>  Flower you are trying to classify is {{result}}.</h4>
+    {% endif %}
+</p>
+</body>
+</html>
